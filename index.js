@@ -569,7 +569,7 @@ UnifiAPI.prototype.stat_sites = function() {
  *     .catch(err => console.log('Error',err))
  */
 UnifiAPI.prototype.add_site = function(name = 'default', description = '', site = undefined) {
-    return this.netsite('/cmd/sitemgr', site = site, {
+    return this.netsite('/cmd/sitemgr', {
         cmd: 'add-site',
         name: name,
         desc: description
@@ -1225,7 +1225,7 @@ UnifiAPI.prototype.set_ap_name = function(ap_id, name = '', site = undefined) {
  * @param {string} radio radio type. ng/ac/bg. Optional. Default ng
  * @param {number} channel The channel number or auto. Optional. Default auto.
  * @param {number} ht channel width. 20/40/80/160. Optional. Default 20.
- * @param {number} min_rssi Minimal RSSI accepted in dbi. Optional. Default -94 
+ * @param {number} min_rssi Minimal RSSI accepted in dbi. Optional. Default -94
  * @param {boolean} min_rssi_enabled If enabled, drops users bellow that rssi valur. Optional. Default false
  * @param {number} antenna_gain The antenna gain. Optional. Default 6 dbi
  * @param {string} tx_power_mode TX Power Mode. Optional. Default auto

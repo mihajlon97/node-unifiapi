@@ -1,7 +1,7 @@
 {
-  "name": "node-unifiapi",
-  "version": "0.0.53",
-  "description": "Provides API to manage Ubiquiti Unifi Controller, ver 4 and 5",
+  "name": "node-unifiapi2",
+  "version": "0.0.1",
+  "description": "Provides API to manage Ubiquiti Unifi Controller, ver 4 and 5 - FORK",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delian/node-unifiapi.git"
+    "url": "git+https://github.com/mihajlon97/node-unifiapi.git"
   },
   "keywords": [
     "unifi",
     "ubiquiti"
   ],
-  "author": "Delian Delchev",
+  "author": "mihajlon97",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/delian/node-unifiapi/issues"
+    "url": "https://github.com/mihajlon97/node-unifiapi/issues"
   },
-  "homepage": "https://github.com/delian/node-unifiapi#readme",
+  "homepage": "https://github.com/mihajlon97/node-unifiapi#readme",
   "devDependencies": {
     "jsdoc-to-markdown": "^3.0.4"
   },
