@@ -586,7 +586,7 @@ UnifiAPI.prototype.add_site = function(name = 'default', description = '', site 
  *     .catch(err => console.log('Error',err))
  */
 UnifiAPI.prototype.remove_site = function(name = 'none', site = undefined) { // TODO: test it
-    return this.netsite('/cmd/sitemgr', site = site, {
+    return this.netsite('/cmd/sitemgr', {
         cmd: 'remove-site',
         name: name
     }, {}, undefined, site);
