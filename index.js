@@ -1443,49 +1443,56 @@ UnifiAPI.prototype.remove_wlanconf = function(id, site = undefined) {
     return this.netsite('/rest/wlanconf/' + id, undefined, {}, 'DELETE', site);
 };
 
-UnifiAPI.prototype.add_wlanconf = function(name, is_guest = true, usergroup_id = undefined, wlangroup_id = undefined, security = 'open', enabled = true, dtim_mode = 'default', dtim_na = 1, dtim_ng = 1, mac_filter_enabled = false, mac_filter_list = [], mac_filter_policy = 'deny', radius_port_1 = 1812, schedule = [], schedule_enabled = false, usergroup = 'Default', wlangroup = 'Default', wep_idx = 1, wpa_enc = 'ccmp', wpa_mode = 'wpa2', ratectrl_na_6 = 'basic', ratectrl_na_9 = 'supported', ratectrl_na_12 = 'basic', ratectrl_na_18 = 'supported', ratectrl_na_24 = 'basic', ratectrl_na_36 = 'supported', ratectrl_na_48 = 'supported', ratectrl_na_54 = 'supported', ratectrl_na_mode = 'default', ratectrl_ng_6 = 'basic', ratectrl_ng_9 = 'supported', ratectrl_ng_12 = 'basic', ratectrl_ng_18 = 'supported', ratectrl_ng_24 = 'basic', ratectrl_ng_36 = 'supported', ratectrl_ng_48 = 'supported', ratectrl_ng_54 = 'supported', ratectrl_ng_cck_1 = 'disabled', ratectrl_ng_cck_2 = 'disabled', ratectrl_ng_cck_5_5 = 'disabled', ratectrl_ng_cck_11 = 'disabled', ratectrl_ng_mode = 'default', site = undefined) {
-    return this.netsite('/rest/wlanconf', {
-        'name': name,
-        'is_guest': is_guest,
-        'security': security,
-        'dtim_mode': dtim_mode,
-        'dtim_na': dtim_na,
-        'dtim_ng': dtim_ng,
-        'enabled': enabled,
-        'mac_filter_enabled': mac_filter_enabled,
-        'mac_filter_list': mac_filter_list,
-        'mac_filter_policy': mac_filter_policy,
-        'radius_port_1': radius_port_1,
-        'schedule': schedule,
-        'schedule_enabled': schedule_enabled,
-        'usergroup_id': usergroup_id,
-        'wlangroup_id': wlangroup_id,
-        'wep_idx': wep_idx,
-        'wpa_enc': wpa_enc,
-        'wpa_mode': wpa_mode,
-        'ratectrl_na_6': ratectrl_na_6,
-        'ratectrl_na_9': ratectrl_na_9,
-        'ratectrl_na_12': ratectrl_na_12,
-        'ratectrl_na_18': ratectrl_na_18,
-        'ratectrl_na_24': ratectrl_na_24,
-        'ratectrl_na_36': ratectrl_na_36,
-        'ratectrl_na_48': ratectrl_na_48,
-        'ratectrl_na_54': ratectrl_na_54,
-        'ratectrl_na_mode': ratectrl_na_mode,
-        'ratectrl_ng_6': ratectrl_ng_6,
-        'ratectrl_ng_9': ratectrl_ng_9,
-        'ratectrl_ng_12': ratectrl_ng_12,
-        'ratectrl_ng_18': ratectrl_ng_18,
-        'ratectrl_ng_24': ratectrl_ng_24,
-        'ratectrl_ng_36': ratectrl_ng_36,
-        'ratectrl_ng_48': ratectrl_ng_48,
-        'ratectrl_ng_54': ratectrl_ng_54,
-        'ratectrl_ng_cck_1': ratectrl_ng_cck_1,
-        'ratectrl_ng_cck_2': ratectrl_ng_cck_2,
-        'ratectrl_ng_cck_5_5': ratectrl_ng_cck_5_5,
-        'ratectrl_ng_cck_11': ratectrl_ng_cck_11,
-        'ratectrl_ng_mode': ratectrl_ng_mode
-    }, {}, undefined, site);
+/**
+ * Add WLAN Network
+ * @return {Promise} Promise
+ * @example unifi.add_wlanconf('default', 'GuestWLAN', true, 'usergroup_idfa191', 'wlangroup_idaaffa191')
+ *     .then(done => console.log('Success',done))
+ *     .catch(err => console.log('Error',err))
+ */
+UnifiAPI.prototype.add_wlanconf = function(site = undefined, name, is_guest = true, usergroup_id = undefined, wlangroup_id = undefined, security = 'open', enabled = true, dtim_mode = 'default', dtim_na = 1, dtim_ng = 1, mac_filter_enabled = false, mac_filter_list = [], mac_filter_policy = 'deny', radius_port_1 = 1812, schedule = [], schedule_enabled = false, usergroup = 'Default', wlangroup = 'Default', wep_idx = 1, wpa_enc = 'ccmp', wpa_mode = 'wpa2', ratectrl_na_6 = 'basic', ratectrl_na_9 = 'supported', ratectrl_na_12 = 'basic', ratectrl_na_18 = 'supported', ratectrl_na_24 = 'basic', ratectrl_na_36 = 'supported', ratectrl_na_48 = 'supported', ratectrl_na_54 = 'supported', ratectrl_na_mode = 'default', ratectrl_ng_6 = 'basic', ratectrl_ng_9 = 'supported', ratectrl_ng_12 = 'basic', ratectrl_ng_18 = 'supported', ratectrl_ng_24 = 'basic', ratectrl_ng_36 = 'supported', ratectrl_ng_48 = 'supported', ratectrl_ng_54 = 'supported', ratectrl_ng_cck_1 = 'disabled', ratectrl_ng_cck_2 = 'disabled', ratectrl_ng_cck_5_5 = 'disabled', ratectrl_ng_cck_11 = 'disabled', ratectrl_ng_mode = 'default') {
+	return this.netsite('/rest/wlanconf', {
+		'name': name,
+		'is_guest': is_guest,
+		'security': security,
+		'dtim_mode': dtim_mode,
+		'dtim_na': dtim_na,
+		'dtim_ng': dtim_ng,
+		'enabled': enabled,
+		'mac_filter_enabled': mac_filter_enabled,
+		'mac_filter_list': mac_filter_list,
+		'mac_filter_policy': mac_filter_policy,
+		'radius_port_1': radius_port_1,
+		'schedule': schedule,
+		'schedule_enabled': schedule_enabled,
+		'usergroup_id': usergroup_id,
+		'wlangroup_id': wlangroup_id,
+		'wep_idx': wep_idx,
+		'wpa_enc': wpa_enc,
+		'wpa_mode': wpa_mode,
+		'ratectrl_na_6': ratectrl_na_6,
+		'ratectrl_na_9': ratectrl_na_9,
+		'ratectrl_na_12': ratectrl_na_12,
+		'ratectrl_na_18': ratectrl_na_18,
+		'ratectrl_na_24': ratectrl_na_24,
+		'ratectrl_na_36': ratectrl_na_36,
+		'ratectrl_na_48': ratectrl_na_48,
+		'ratectrl_na_54': ratectrl_na_54,
+		'ratectrl_na_mode': ratectrl_na_mode,
+		'ratectrl_ng_6': ratectrl_ng_6,
+		'ratectrl_ng_9': ratectrl_ng_9,
+		'ratectrl_ng_12': ratectrl_ng_12,
+		'ratectrl_ng_18': ratectrl_ng_18,
+		'ratectrl_ng_24': ratectrl_ng_24,
+		'ratectrl_ng_36': ratectrl_ng_36,
+		'ratectrl_ng_48': ratectrl_ng_48,
+		'ratectrl_ng_54': ratectrl_ng_54,
+		'ratectrl_ng_cck_1': ratectrl_ng_cck_1,
+		'ratectrl_ng_cck_2': ratectrl_ng_cck_2,
+		'ratectrl_ng_cck_5_5': ratectrl_ng_cck_5_5,
+		'ratectrl_ng_cck_11': ratectrl_ng_cck_11,
+		'ratectrl_ng_mode': ratectrl_ng_mode
+	}, {}, undefined, site);
 };
 
 /**
