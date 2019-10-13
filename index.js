@@ -522,6 +522,25 @@ UnifiAPI.prototype.list_aps = function(mac = '', site = undefined) { // TODO: no
 };
 
 /**
+ * Move AP
+ * @param {string} mac AP mac/id
+ * @param {string} site_id Ubiquiti site id
+ * @param {string} site Ubiquiti site, if different from default - optional
+ * @return {Promise} Promise
+ * @example unifi.move_ap('00:00:11:22:33:44', 'asdasd213123123', 'default')
+ *     .then(done => console.log('Success',done))
+ *     .catch(err => console.log('Error',err))
+ */
+UnifiAPI.prototype.move_ap = function(mac = '', site_id = '', site = undefined) {
+	return this.netsite('/cmd/sitemgr', {
+		cmd: 'move-device',
+		mac: mac,
+		site: site_id
+	}, {}, undefined, site);
+};
+
+
+/**
  * List Rogue APs
  * @param {number} within For how many hours back. Optional. Default 24h
  * @param {string} site Ubiquiti site, if different from default - optional
