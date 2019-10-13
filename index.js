@@ -534,8 +534,24 @@ UnifiAPI.prototype.list_aps = function(mac = '', site = undefined) { // TODO: no
 UnifiAPI.prototype.move_ap = function(mac = '', site_id = '', site = undefined) {
 	return this.netsite('/cmd/sitemgr', {
 		cmd: 'move-device',
-		mac: mac,
+		mac: mac.toLowerCase(),
 		site: site_id
+	}, {}, undefined, site);
+};
+
+/**
+ * Adopt Wireless Access Point
+ * @param {string} mac mac address of the AP
+ * @param {string} site Ubiquiti site to query, if different from default - optional
+ * @return {Promise} Promise
+ * @example unifi.adopt_ap('00:01:02:03:aa:04')
+ *     .then(done => console.log('Success',done))
+ *     .catch(err => console.log('Error',err))
+ */
+UnifiAPI.prototype.adopt_ap = function(mac = '', site = undefined) {
+	return this.netsite('/cmd/devmgr', {
+		cmd: 'adopt',
+		mac: mac.toLowerCase()
 	}, {}, undefined, site);
 };
 
