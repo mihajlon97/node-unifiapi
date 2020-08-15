@@ -540,6 +540,25 @@ UnifiAPI.prototype.move_ap = function(mac = '', site_id = '', site = undefined) 
 };
 
 /**
+ * Invite Existing Admin
+ * @param {string} admin_id Existing Admin id
+ * @param {string} permissions Admin Permissions
+ * @param {string} site Ubiquiti site, if different from default - optional
+ * @return {Promise} Promise
+ * @example unifi.grant_admin('5edaa3a33774233ddd99ac35', ["API_DEVICE_ADOPT", "API_DEVICE_RESTART"], 'default')
+ *     .then(done => console.log('Success',done))
+ *     .catch(err => console.log('Error',err))
+ */
+UnifiAPI.prototype.grant_admin = function(admin_id = '', permissions = [], site = undefined) {
+	return this.netsite('/cmd/sitemgr', {
+		cmd: 'grant-admin',
+		role: 'admin',
+		permissions: permissions,
+		admin: admin_id,
+	}, {}, undefined, site);
+};
+
+/**
  * Adopt Wireless Access Point
  * @param {string} mac mac address of the AP
  * @param {string} site Ubiquiti site to query, if different from default - optional
