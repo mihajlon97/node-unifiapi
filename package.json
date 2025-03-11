@@ -1,6 +1,6 @@
 {
   "name": "node-unifiapi2",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Provides API to manage Ubiquiti Unifi Controller, ver 4 and 5 - FORK",
   "main": "index.js",
   "scripts": {
@@ -22,21 +22,20 @@
   },
   "homepage": "https://github.com/mihajlon97/node-unifiapi#readme",
   "devDependencies": {
-    "jsdoc-to-markdown": "^3.0.4"
+    "jsdoc-to-markdown": "^7.1.1"
   },
   "dependencies": {
-    "debug": "^2.6.9",
-    "merge": "^1.2.1",
-    "pako": "^1.0.6",
-    "request": "^2.88.0",
-    "request-debug": "^0.2.0",
-    "uuid": "^3.3.2",
-    "ws": "^6.1.0"
+    "debug": "^4.3.4",
+    "merge": "^2.1.1",
+    "pako": "^2.1.0",
+    "axios": "^1.6.2",
+    "uuid": "^9.0.1",
+    "ws": "^8.14.2"
   },
   "jshintConfig": {
     "esversion": 6
   },
   "engines": {
-    "node": ">=4.1.0"
+    "node": ">=14.0.0"
   }
 }
