@@ -1,6 +1,6 @@
 {
   "name": "node-unifiapi2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Provides API to manage Ubiquiti Unifi Controller, ver 4 and 5 - FORK",
   "main": "index.js",
   "scripts": {
@@ -28,9 +28,11 @@
     "debug": "^4.3.4",
     "merge": "^2.1.1",
     "pako": "^2.1.0",
-    "axios": "^1.6.2",
+    "axios": "^1.6.7",
     "uuid": "^9.0.1",
-    "ws": "^8.14.2"
+    "ws": "^8.14.2",
+    "axios-cookiejar-support": "^5.0.0",
+    "tough-cookie": "^4.1.3"
   },
   "jshintConfig": {
     "esversion": 6
